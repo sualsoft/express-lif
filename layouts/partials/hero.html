@@ -24,31 +24,39 @@
             <h2>Only <span>$500 </span>/month</h2>
           </di>
         </div>
-        <div class="col-md-7 footer-newsletter">
+        <div class="col-md-7 footer-newsletter" id="registrationForm">
           <form action="javascript:handleIt()" method="post">
             <input
               type="email"
               placeholder="Email"
               id="email"
               name="email"
-              required=""
+              required
             /><input type="submit" value="Subscribe" />
           </form>
-          <!-- Form js -->
-          <script type="text/javascript">
-            function handleIt() {
-              $("#thanks").show();
-              $("#registrationForm").hide();
-
-              $.post(
-                "https://us-central1-expreis.cloudfunctions.net/sendEmail",
-                { email: document.getElementById("email").value },
-                function (data) {}
-              );
-            }
-          </script>
+        </div>
+        <div style="display: none" id="thanks">
+          Thank you for your interest in ExpressLIS.<br />
+          We are still working on the product, we will contact you when we are
+          ready.<br />
+          Features and prices might change but our goal is to provide a feature
+          reach, inexpensive LIS!
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Form js -->
+<script type="text/javascript">
+  function handleIt() {
+    $("#thanks").show();
+    $("#registrationForm").hide();
+
+    $.post(
+      "https://us-central1-expreis.cloudfunctions.net/sendEmail",
+      { email: document.getElementById("email").value },
+      function (data) {}
+    );
+  }
+</script>

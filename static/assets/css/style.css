@@ -167,6 +167,10 @@ h6 {
   margin-left: 195px;
 }
 
+#hero #thanks {
+  color: #466d1d;
+}
+
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
